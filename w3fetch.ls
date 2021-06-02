@@ -1,11 +1,11 @@
 "use strict"
-httpFetch = do ->
-	# check requirements
-	consoleError = (msg) !-> # {{{
-		a = '%chttpFetch: %c'+msg
-		console.log a, 'font-weight:bold;color:gold', 'color:orangered;font-size:140%'
-	# }}}
+w3fetch = do ->
+	# requirements
 	# {{{
+	consoleError = (msg) !->
+		a = '%cw3fetch: %c'+msg
+		console.log a,'font-weight:bold;color:gold','color:orangered;font-size:140%'
+	###
 	Api = [
 		typeof fetch
 		typeof AbortController
@@ -1270,7 +1270,7 @@ httpFetch = do ->
 			# store
 			@store.set data, options
 		# }}}
-	# httpFetch instance identifier
+	# instance identifier
 	FetchHandler.prototype = {
 		success: (data, result) !-> # {{{
 			# unify nulls
@@ -1493,7 +1493,7 @@ httpFetch = do ->
 			switch k
 			case 'isGlobal'
 				# only first instance is global
-				return (p == httpFetch)
+				return (p == w3fetch)
 			case 'secret'
 				return if a = handler.config.secret
 					then a.get!
@@ -1655,8 +1655,7 @@ httpFetch = do ->
 			# create custom instance
 			return new Proxy a.fetch, b
 	# }}}
-	# create global instance and
-	# keep it in its own scope
-	return httpFetch = (newInstance null) null
+	# global instance
+	return w3fetch = (newInstance null) null
 ###
 # vim: ts=2 sw=2 sts=2 fdm=marker:
