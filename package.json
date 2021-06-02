@@ -1,0 +1,29 @@
+{
+  "name": "w3fetch",
+  "description": "browsers Fetch API",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/determin1st/w3fetch.git"
+  },
+  "files": [
+    "w3fetch.js",
+    "w3fetch.ls",
+    "README.md"
+  ],
+  "keywords": [
+    "http",
+    "fetch",
+    "json",
+    "browser",
+    "api",
+    "cancellation",
+    "retry",
+    "upload",
+    "download",
+    "stream",
+    "form",
+    "crypto"
+  ],
+  "main": "w3fetch.js",
+  "version": "1.0.0"
+}
